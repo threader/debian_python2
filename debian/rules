@@ -112,6 +112,7 @@ stamp-install: stamp-build control-file stamp-control
 	dh_testroot
 #	dh_installdirs -ppython usr/share/doc/python
 	dh_install
+	DESTDIR=debian/python2-minimal PREFIX=/usr make install-runtime
 
 	touch stamp-install
 
