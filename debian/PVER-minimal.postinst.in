@@ -40,7 +40,7 @@ if [ "$1" = configure ]; then
 		| sed -n '/^\/usr\/lib\/@PVER@\/.*\.py$/p' | $filt)
     if [ -n "$files" ]; then
 	/usr/bin/@PVER@ -E -S /usr/lib/@PVER@/py_compile.py $files
-	if grep -sq '^byte-compile[^#]*optimize' /etc/python/debian_config; then
+	if grep -sq '^byte-compile[^#]*optimize' /etc/python2/debian_config; then
 	    /usr/bin/@PVER@ -E -S -O /usr/lib/@PVER@/py_compile.py $files
 	fi
     else
@@ -48,10 +48,10 @@ if [ "$1" = configure ]; then
     fi
     bc=no
     if [ -z "$2" ] || dpkg --compare-versions "$2" lt 2.7-9 \
-        || [ -f /var/lib/python/@PVER@_installed ]; then
+        || [ -f /var/lib/python2/@PVER@_installed ]; then
     	bc=yes
     fi
-    if grep -sq '^unsupported-versions[^#]*@PVER@' /usr/share/python/debian_defaults
+    if grep -sq '^unsupported-versions[^#]*@PVER@' /usr/share/python2/debian_defaults
     then
 	# FIXME: byte compile anyway?
 	bc=no
@@ -62,13 +62,13 @@ if [ "$1" = configure ]; then
 	    echo "Linking and byte-compiling packages for runtime @PVER@..."
 	fi
 	version=$(dpkg -s @PVER@-minimal | awk '/^Version:/ {print $2}')
-	for hook in /usr/share/python/runtime.d/*.rtinstall; do
+	for hook in /usr/share/python2/runtime.d/*.rtinstall; do
 	    [ -x $hook ] || continue
 	    $hook rtinstall @PVER@ "$2" "$version"
 	done
-	if [ -f /var/lib/python/@PVER@_installed ]; then
-	    rm -f /var/lib/python/@PVER@_installed
-	    rmdir --ignore-fail-on-non-empty /var/lib/python 2>/dev/null
+	if [ -f /var/lib/python2/@PVER@_installed ]; then
+	    rm -f /var/lib/python2/@PVER@_installed
+	    rmdir --ignore-fail-on-non-empty /var/lib/python2 2>/dev/null
 	fi
     fi
 fi

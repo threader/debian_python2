@@ -56,14 +56,14 @@
 -LIBPC=		$(LIBDIR)/pkgconfig
 +LIBPC=		$(LIBDIR)/$(MULTIARCH)/pkgconfig
  
- libainstall:	@DEF_MAKE_RULE@ python-config
+ libainstall:	@DEF_MAKE_RULE@ python2-config
  	@for i in $(LIBDIR) $(LIBP) $(LIBPL) $(LIBPC); \
 @@ -1493,6 +1500,11 @@ patchcheck:
  
  Python/thread.o: @THREADHEADERS@
  
 +Python/sysmodule.o: $(srcdir)/Python/sysmodule.c Makefile
-+	$(CC) -c $(PY_CORE_CFLAGS) \
++	$(CC) -c $(PY_CORE_CFLAGS)  -I../Include -I../PC \
 +		-DMULTIARCH='"$(MULTIARCH)"' \
 +		-o $@ $(srcdir)/Python/sysmodule.c
 +

@@ -19,8 +19,8 @@ case "$1" in
 	fi
 
 	# remember newly installed runtime
-	mkdir -p /var/lib/python
-	touch /var/lib/python/@PVER@_installed
+	mkdir -p /var/lib/python2
+	touch /var/lib/python2/@PVER@_installed
     ;;
     upgrade)
     ;;
