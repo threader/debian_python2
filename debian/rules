@@ -218,6 +218,27 @@ buildd_shared	:= $(CURDIR)/build-shared
 buildd_debug	:= $(CURDIR)/build-debug
 buildd_shdebug	:= $(CURDIR)/build-shdebug
 
+distribution := $(shell dpkg-vendor --query Vendor)
+distrelease  := $(shell lsb_release -cs)
+
+export VER=2.7
+export NVER=2.8
+export PVER=python2.7
+
+PREVVER	:= $(shell awk '/^python/ && NR > 1 {print substr($$2,2,length($$2)-2); exit}' debian/changelog)
+# first version with Multi-Arch: allowed
+PREVVER := 2.7.18~
+
+# not yet allowed
+ma_allowed	= yes
+
+ifeq (,$(filter $(distrelease),lenny etch squeeze wheezy lucid maverick natty oneiric precise quantal raring saucy trusty))
+  bd_i586 = dpkg-dev (>= 1.17.11), python2.7:any (>= 2.7.18~)
+endif
+
+
+PWD		:= $(shell pwd)
+
 d		:= debian/tmp
 scriptdir	=  usr/share/lib/python$(VER)
 scriptdir	=  usr/share/python$(VER)

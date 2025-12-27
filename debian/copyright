@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This package was put together by Klee Dienes <klee@debian.org> from 
 sources from ftp.python.org:/pub/python, based on the Debianization by 
 the previous maintainers Bernd S. Brentrup <bsb@uni-muenster.de> and 
@@ -20,6 +21,20 @@ under the Python Licenses are found at the end of this file.
 
 Python License
 ==============
+This is the Debian GNU/Linux prepackaged version of the Python programming
+language. Python was written by Guido van Rossum <guido@cwi.nl> and others.
+
+This package was put together by Klee Dienes <klee@debian.org> from
+sources from ftp.python.org:/pub/python, based on the Debianization by
+the previous maintainers Bernd S. Brentrup <bsb@uni-muenster.de> and
+Bruce Perens.
+
+Current maintainer is Matthias Klose <doko@debian.org> until the final
+2.3 version is released.
+
+
+Copyright notice (as found in LICENSE in the original source).
+--------------------------------------------------------------
 
 A. HISTORY OF THE SOFTWARE
 ==========================
@@ -115,15 +130,14 @@ PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
 otherwise using this software ("Python") in source or binary form and
 its associated documentation.
 
-2. Subject to the terms and conditions of this License Agreement, PSF
-hereby grants Licensee a nonexclusive, royalty-free, world-wide
-license to reproduce, analyze, test, perform and/or display publicly,
-prepare derivative works, distribute, and otherwise use Python
-alone or in any derivative version, provided, however, that PSF's
-License Agreement and PSF's notice of copyright, i.e., "Copyright (c)
-2001, 2002, 2003, 2004, 2005, 2006, 2007 Python Software Foundation; 
-All Rights Reserved" are retained in Python alone or in any derivative 
-version prepared by Licensee.
+2. Subject to the terms and conditions of this License Agreement, PSF hereby
+grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce,
+analyze, test, perform and/or display publicly, prepare derivative works,
+distribute, and otherwise use Python alone or in any derivative version,
+provided, however, that PSF's License Agreement and PSF's notice of copyright,
+i.e., "Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+Python Software Foundation; All Rights Reserved" are retained in Python alone or
+in any derivative version prepared by Licensee.
 
 3. In the event Licensee prepares a derivative work that is based on
 or incorporates Python or any part thereof, and wants to make
@@ -912,6 +926,20 @@ so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+dh_python2, pycompile, pyclean and debpython module:
+====================================================
+Copyright © 2010,2011 Piotr Ożarowski <piotr@debian.org>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -956,3 +984,5 @@ Files: Lib/ensurepip/_bundled/pip-*.whl/pip/_vendor/requests/packages/chardet/*
 Copyright: 2006-2008, Mark Pilgrim
            2012-2013, Ian Cordasco
 License: LGPL-2.1+
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
